@@ -1,0 +1,15 @@
+*Karaf commands:*
+
+* la - Shows all installed bundles
+* list - Show user bundles
+* service:list - Shows the active OSGi services. This list is quite long. Here it is quite handy that you can use unix pipes like “ls | grep admin”
+* exports - Shows exported packages and bundles providing them. This helps to find out where a package may come from.
+* feature:list - Shows which features are installed and can be installed.
+* feature:install webconsole - Install features (a list of bundles and other features). Using the above command we install the Karaf webconsole. It can be reached at [http://localhost:8181/system/console]. Log in with karaf/karaf and take some time to see what it has to offer.
+* diag - Show diagnostic information for bundles that could not be started
+* log:tail - Show the log. Use ctrl-c to  go back to Console
+* Ctrl-d - Exit the console. If this is the main console karaf will also be stopped.
+
+NOTE: OSGi containers preserve state after restarts}Please note that Karaf like all osgi containers maintains it´s last state of installed and started bundles. So if something should not work anymore a restart is not sure to help. To really start fresh again stop karaf and delete the data directory or start with bin/karaf clean.
+
+TIP: Karaf is very silent. To not miss error messages always keep a tail -f data/karaf.log open !!
